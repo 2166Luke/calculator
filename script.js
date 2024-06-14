@@ -1,7 +1,7 @@
 let value1 = 0;
 let value2 = 0;
 let operator = '';
-let decimal = true;
+let decimal = false;
 let displayVal = 0;
 let computation = 0;
 let state = 'first';
@@ -11,7 +11,11 @@ let second = false;
 let display = document.querySelector('.display');
 let number = document.querySelectorAll('.number');
 let operand = document.querySelectorAll('.operator');
-
+let negateBtn = document.querySelector('.negate');
+let computeBtn = document.querySelector('.compute');
+let decimalBtn = document.querySelector('.decimal');
+let clearBtn = document.querySelector('.clear');
+let undoBtn = document.querySelector('.undo');
 
 display.textContent = `${displayVal}`;
 
@@ -86,7 +90,7 @@ operand.forEach((element) => {
             });
             event.target.classList.add('active');
             value2 = parseFloat(displayVal);
-            console.log(operator, value1, value2)
+            console.log(value1, operator, value2)
             computation = operate(operator, value1, value2);
             second = false;
             value1 = parseFloat(computation);
@@ -99,4 +103,61 @@ operand.forEach((element) => {
             operator = '';
         };
     });
+});
+
+negateBtn.addEventListener('click', () => {
+    displayVal = negate(parseFloat(displayVal));
+    display.textContent = `${displayVal}`;
+});
+
+clearBtn.addEventListener('click', () => {
+    displayVal = 0;
+    value1 = 0;
+    value2 = 0;
+    operator = '';
+    decimal = false;
+    computation = 0;
+    second = false;
+    display.textContent = `${displayVal}`;
+    operand.forEach((element) => {
+        element.classList.remove('active');
+    });
+    state = 'first';
+});
+
+computeBtn.addEventListener('click', () => {
+    if (state === 'second' && second === true) {
+        operand.forEach((element) => {
+            element.classList.remove('active');
+        });
+        value2 = parseFloat(displayVal);
+        computation = operate(operator, value1, value2);
+        operator = '';
+        display.textContent = `${computation}`;
+        displayVal = computation;
+        value1 = 0;
+        value2 = 0;
+        state = 'first';
+        first = false;
+        second = false;
+    }
+});
+
+decimalBtn.addEventListener('click', () => {
+    if (!decimal) {
+        displayVal += '.';
+        decimal = true;
+    }
+    display.textContent = `${displayVal}`;
+});
+
+undoBtn.addEventListener('click', () => {
+    displayVal = displayVal.slice(0, -1);
+    let deletedChar = displayVal.slice(-1);
+    if (deletedChar === '.') {
+        decimal = false;
+    } else if (displayVal === '') {
+        displayVal = 0;
+    }
+    display.textContent = `${displayVal}`
 });
