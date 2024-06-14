@@ -1,3 +1,184 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background-color: #37393A;
+    text-align: center;
+    user-select: none;
+    color: aliceblue;
+}
+
+.calculatorBack {
+    background-color: #255957;
+    padding: 1px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #255957;
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calculator {
+    background-color: #437C90;
+    padding: 13px;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+.result {
+    
+}
+
+.undo {
+    padding: 10px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+.displayBox {
+    background-color: #255957;
+    border-color: #255957;
+    height: 100%;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: right;
+    font-size: 40px;
+    color:aliceblue;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 0;
+}
+
+.display {
+    padding-right: 5px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
 .active { 
     background-color: rgb(67, 67, 174);
+}
+
+button {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 100%;
+    font-size: large;
+    text-align: center;
+    color: #EEEBD3;
+}
+
+.buttons {
+    padding: 2px;
+}
+
+.number {
+
+}
+
+.operator {
+
+}
+
+.pushable {
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    position: relative;
+    background: transparent;
+    transition: filter 600ms;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.pushable:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.front {
+    display: block;
+    padding: 20px 50px;
+    border-radius: 12px;
+    position: relative;
+    font-size: 1.25rem;
+    background: hsl(345deg 100% 47%);
+    color: white;
+    transform: translateY(-9px);
+    will-change: transform;
+    transition:
+      transform
+      600ms
+      cubic-bezier(.3, .7, .4, 1);
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    transform: translateY(2px);
+    filter:blur(4px);
+}
+
+.edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(
+    to left,
+    hsl(340deg 100% 16%) 0%,
+    hsl(340deg 100% 32%) 8%,
+    hsl(340deg 100% 32%) 92%,
+    hsl(340deg 100% 16%) 100%
+  );
+}
+
+.pushable:hover .front {
+    transform: translateY(-13px);
+    transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.pushable:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+}
+
+.pushable:active .shadow {
+    transform: translateY(1px);
+}
+
+.pushable:hover .shadow {
+    transform: translateY(4px);
+}
+
+.pushable:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.pushable:hover {
+    transition: filter 250ms;
+    filter: brightness(110%);
 }

@@ -8,32 +8,116 @@
 </head>
 <body>
     <main>
-        <div class="calculator">
-            <h1>Calculator</h1>
-            <div class="result">
-                <button class="undo"><</button>
-                <div class="display"></div>
-            </div>
-            <div class="buttons">
-                <button class="number" data-number="7">7</button>
-                <button class="number" data-number="8">8</button>
-                <button class="number" data-number="9">9</button>
-                <button class="number" data-number="4">4</button>
-                <button class="number" data-number="5">5</button>
-                <button class="number" data-number="6">6</button>
-                <button class="number" data-number="1">1</button>
-                <button class="number" data-number="2">2</button>
-                <button class="number" data-number="3">3</button>
-                <button class="number" data-number="0">0</button>
-                <button class="operator" data-operator="+">+</button>
-                <button class="operator" data-operator="-">-</button>
-                <button class="operator" data-operator="*">*</button>
-                <button class="operator" data-operator="/">/</button>
-                <button class="compute">=</button>
-                <button class="negate">+/-</button>
-                <button class="decimal">.</button>
-                <button class="clear">C</button>
-            </div>
+        <h1>Calculator</h1>
+        <div class="calculatorBack">
+            
+            <table class="calculator">
+            <thead class="result">
+                <td>
+                    <div>
+                        <button class="pushable undo disabled">
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front">DEL</span></button>
+                    </div>
+                </td>
+                <td colspan="3">
+                    <div class="displayBox">
+                        <div class="display"></div>
+                    </div>
+                </td>
+            </thead>
+            <tbody class="buttons">
+                
+                    <tr>
+                        <td><button class="pushable clear">
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front">C</span></button></td>
+                        <td><button class="pushable negate">
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front">+/-</span</button></td>
+                        <td><button class="pushable percent">
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front">%</span></button></td>
+                        <td><button class="pushable operator">
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front">+</span></button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="pushable number">
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front">7</span></button></td>
+                        <td><button class="pushable number">
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front">8</span></button></td>
+                        <td><button class="pushable number">
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front">9</span></button></td>
+                        <td><button class="pushable operator">
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front">-</span></button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="pushable number">
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front">4</span></button></td>
+                        <td><button class="pushable number">
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front">5</span></button></td>
+                        <td><button class="pushable number">
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front">6</span></button></td>
+                        <td><button class="pushable operator">
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front">*</span></button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="pushable number">
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front">1</span></button></td>
+                        <td><button class="pushable number">
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front">2</span></button></td>
+                        <td><button class="pushable number">
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front">3</span></button></td>
+                        <td><button class="pushable operator">
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front">/</span></button></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><button class="pushable number">
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front">0</span></button></td>
+                        <td><button class="pushable decimal">
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front">.</span></button></td>
+                        <td><button class="pushable compute">
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front">=</span></button></td>
+                    </tr>
+                
+            </tbody>
+        </table>
         </div>
     </main>
 </body>
