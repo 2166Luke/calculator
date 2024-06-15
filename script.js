@@ -15,7 +15,7 @@ let negateBtn = document.querySelector('.negate');
 let computeBtn = document.querySelector('.compute');
 let decimalBtn = document.querySelector('.decimal');
 let clearBtn = document.querySelector('.clear');
-let undoBtn = document.querySelector('.undo');
+let undoBtn = document.querySelector('#undo');
 let percentBtn = document.querySelector('.percent');
 
 display.textContent = `${displayVal}`;

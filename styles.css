@@ -3,7 +3,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 60vh;
+    height: 80vh;
     background-color: #37393A;
     text-align: center;
     user-select: none;
@@ -11,40 +11,47 @@ body {
 }
 
 .calculatorBack {
-    background-color: #255957;
-    padding: 1px;
+    background-color: #475966;
+    padding: 4px;
     border-radius: 10px;
-    border-style: solid;
-    border-color: #255957;
+    border-style: none;
     height: 100%;
     width: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.9);
 }
 
 .calculator {
-    background-color: #437C90;
-    padding: 13px;
+    background-color: #D6C9C9;
+    padding: 16px;
     border-radius: 10px;
     height: 100%;
     width: 100%;
 }
 
-.result {
-    
+.undoContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
-.undo {
-    padding: 10px;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
+.undo, #undo {
+    border-radius: 50% !important;
+    text-align: center;
+}
+
+span.front.undo {
+    transform: translateY(-12px);
+    padding: 30px
 }
 
 .displayBox {
-    background-color: #255957;
-    border-color: #255957;
+    background-color: #37393A;
     height: 100%;
     width: 100%;
     padding-top: 20px;
@@ -52,18 +59,23 @@ body {
     text-align: right;
     font-size: 40px;
     color:aliceblue;
-    border-radius: 4px;
-    border-style: solid;
-    border-width: 0;
+    border-radius: 6px;
+    border-style: none;
+    box-shadow: inset 2px 3px 5px 0px rgba(0, 0, 0, 0.8);
+}
+
+.displayBox, .undoContainer {
+    margin-bottom: 25px;
 }
 
 .display {
-    padding-right: 5px;
+    padding-right: 10px;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     flex-wrap: wrap;
+    font-size: larger;
 }
 
 .active { 
@@ -83,14 +95,6 @@ button {
 
 .buttons {
     padding: 2px;
-}
-
-.number {
-
-}
-
-.operator {
-
 }
 
 .pushable {
@@ -115,7 +119,7 @@ button {
     border-radius: 12px;
     position: relative;
     font-size: 1.25rem;
-    background: hsl(345deg 100% 47%);
+    background: #77B6EA;
     color: white;
     transform: translateY(-9px);
     will-change: transform;
@@ -146,10 +150,10 @@ button {
     border-radius: 12px;
     background: linear-gradient(
     to left,
-    hsl(340deg 100% 16%) 0%,
-    hsl(340deg 100% 32%) 8%,
-    hsl(340deg 100% 32%) 92%,
-    hsl(340deg 100% 16%) 100%
+    #475966 0%,
+    #577892 8%,
+    #577892 92%,
+    #475966 100%
   );
 }
 
